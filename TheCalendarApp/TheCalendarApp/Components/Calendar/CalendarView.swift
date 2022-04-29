@@ -57,6 +57,7 @@ final class CalendarView: UIView {
         guard let startDate = visibleDates.monthDates.first?.date else {
             return
         }
+        
         calendarHeaderLabel.text = startDate.withFormat(DateFormats.Calendar.calendarTitleFormat).uppercased()
     }
     

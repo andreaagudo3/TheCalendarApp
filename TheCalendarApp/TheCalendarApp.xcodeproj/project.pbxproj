@@ -47,6 +47,10 @@
 		1910B1E1281C5C6600941BC3 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B1DA281C5C6600941BC3 /* Fonts.swift */; };
 		1910B1E3281C5CD000941BC3 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B1E2281C5CD000941BC3 /* Date+Ext.swift */; };
 		1910B1E5281C646D00941BC3 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B1E4281C646D00941BC3 /* UIView+Ext.swift */; };
+		1910B1E8281C903E00941BC3 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B1E7281C903E00941BC3 /* Booking.swift */; };
+		1910B1EA281C907100941BC3 /* Decoding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B1E9281C907100941BC3 /* Decoding+Extension.swift */; };
+		1910B1EC281C90C700941BC3 /* Calendar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B1EB281C90C700941BC3 /* Calendar+Ext.swift */; };
+		1910B1EE281C914700941BC3 /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B1ED281C914700941BC3 /* DateFormats.swift */; };
 		2CA1351906ED0DE2BA14AACB /* Pods_TheCalendarAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D15E7F3D0461908F3E6C02 /* Pods_TheCalendarAppTests.framework */; };
 		65513B43EB213430BD1B7BBD /* Pods_TheCalendarApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40F1334CD0C6CD23C757299 /* Pods_TheCalendarApp.framework */; };
 /* End PBXBuildFile section */
@@ -114,6 +118,10 @@
 		1910B1DA281C5C6600941BC3 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		1910B1E2281C5CD000941BC3 /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		1910B1E4281C646D00941BC3 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		1910B1E7281C903E00941BC3 /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
+		1910B1E9281C907100941BC3 /* Decoding+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Decoding+Extension.swift"; sourceTree = "<group>"; };
+		1910B1EB281C90C700941BC3 /* Calendar+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Calendar+Ext.swift"; sourceTree = "<group>"; };
+		1910B1ED281C914700941BC3 /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
 		3EDB7E8658CE90AB16AEF123 /* Pods-TheCalendarApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCalendarApp.debug.xcconfig"; path = "Target Support Files/Pods-TheCalendarApp/Pods-TheCalendarApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A0636BA58AE5A162810CE722 /* Pods-TheCalendarAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCalendarAppTests.release.xcconfig"; path = "Target Support Files/Pods-TheCalendarAppTests/Pods-TheCalendarAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A099D6E2BE61F11F8A30F70A /* Pods-TheCalendarApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCalendarApp.release.xcconfig"; path = "Target Support Files/Pods-TheCalendarApp/Pods-TheCalendarApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,6 +226,8 @@
 		1910B17C281C553400941BC3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1910B1EB281C90C700941BC3 /* Calendar+Ext.swift */,
+				1910B1E9281C907100941BC3 /* Decoding+Extension.swift */,
 				1910B1E2281C5CD000941BC3 /* Date+Ext.swift */,
 				1910B1E4281C646D00941BC3 /* UIView+Ext.swift */,
 			);
@@ -282,6 +292,7 @@
 		1910B18D281C553400941BC3 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				1910B1E7281C903E00941BC3 /* Booking.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -397,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				1910B179281C553400941BC3 /* AppConstants.swift */,
+				1910B1ED281C914700941BC3 /* DateFormats.swift */,
 			);
 			path = AppConstants;
 			sourceTree = "<group>";
@@ -632,11 +644,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1910B1A1281C556500941BC3 /* AppCoordinator.swift in Sources */,
+				1910B1E8281C903E00941BC3 /* Booking.swift in Sources */,
 				1910B1D0281C5C3E00941BC3 /* Colors.swift in Sources */,
 				1910B1C8281C5B8300941BC3 /* AnimationView.swift in Sources */,
 				1910B1C5281C5B8300941BC3 /* CalendarCell.swift in Sources */,
 				1910B1AA281C566F00941BC3 /* CalendarVC.swift in Sources */,
 				1910B1A0281C556500941BC3 /* CoordinatorProtocol.swift in Sources */,
+				1910B1EC281C90C700941BC3 /* Calendar+Ext.swift in Sources */,
 				1910B1C4281C5B8300941BC3 /* CalendarDay.swift in Sources */,
 				1910B1E1281C5C6600941BC3 /* Fonts.swift in Sources */,
 				1910B192281C553400941BC3 /* Application.swift in Sources */,
@@ -645,7 +659,9 @@
 				1910B191281C553400941BC3 /* AppDelegate.swift in Sources */,
 				1910B1C7281C5B8300941BC3 /* AnimationClass.swift in Sources */,
 				1910B1AF281C570E00941BC3 /* CalendarCoordinator.swift in Sources */,
+				1910B1EA281C907100941BC3 /* Decoding+Extension.swift in Sources */,
 				1910B190281C553400941BC3 /* AppConstants.swift in Sources */,
+				1910B1EE281C914700941BC3 /* DateFormats.swift in Sources */,
 				1910B1AD281C566F00941BC3 /* CalendarContract.swift in Sources */,
 				1910B1B3281C582000941BC3 /* BookingCell.swift in Sources */,
 				1910B1E3281C5CD000941BC3 /* Date+Ext.swift in Sources */,
