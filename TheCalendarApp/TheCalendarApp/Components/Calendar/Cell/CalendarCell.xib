@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="CalendarCell" id="580-F1-BvX" customClass="CalendarCell" customModule="CalendarApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="176" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jza-hi-ej9" customClass="AnimationView" customModule="CalendarApp" customModuleProvider="target">
+                    <rect key="frame" x="20.5" y="22.5" width="135" height="135"/>
+                    <color key="backgroundColor" name="brand"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMd-lX-9b9">
+                    <rect key="frame" x="70.5" y="81.5" width="35.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" name="greyPrimary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDi-MA-pgD">
+                    <rect key="frame" x="84" y="145.5" width="8" height="8"/>
+                    <color key="backgroundColor" name="error"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="8" id="8sW-au-8rY"/>
+                        <constraint firstAttribute="width" secondItem="fDi-MA-pgD" secondAttribute="height" multiplier="1:1" id="Un6-Rk-6Rq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="d84-Ue-YqL"/>
+            <constraints>
+                <constraint firstItem="jza-hi-ej9" firstAttribute="centerX" secondItem="580-F1-BvX" secondAttribute="centerX" id="0NQ-E8-EBU"/>
+                <constraint firstItem="KMd-lX-9b9" firstAttribute="centerX" secondItem="580-F1-BvX" secondAttribute="centerX" id="InV-6n-HiQ"/>
+                <constraint firstItem="jza-hi-ej9" firstAttribute="centerY" secondItem="580-F1-BvX" secondAttribute="centerY" id="JQZ-fI-5gt"/>
+                <constraint firstItem="jza-hi-ej9" firstAttribute="height" secondItem="580-F1-BvX" secondAttribute="height" multiplier="0.75" id="XRS-nl-tH7"/>
+                <constraint firstItem="KMd-lX-9b9" firstAttribute="centerY" secondItem="580-F1-BvX" secondAttribute="centerY" id="YHa-7Y-zUc"/>
+                <constraint firstItem="fDi-MA-pgD" firstAttribute="centerX" secondItem="d84-Ue-YqL" secondAttribute="centerX" id="YNl-ig-Ouf"/>
+                <constraint firstItem="jza-hi-ej9" firstAttribute="width" secondItem="580-F1-BvX" secondAttribute="height" multiplier="0.75" id="YoK-Ie-fh2"/>
+                <constraint firstItem="fDi-MA-pgD" firstAttribute="bottom" secondItem="jza-hi-ej9" secondAttribute="bottom" constant="-4" id="krW-Cs-VJ9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dayLabel" destination="KMd-lX-9b9" id="hIS-vZ-Dgg"/>
+                <outlet property="dotView" destination="fDi-MA-pgD" id="q6z-ge-BlN"/>
+                <outlet property="selectedView" destination="jza-hi-ej9" id="S6c-jo-Ge2"/>
+            </connections>
+            <point key="canvasLocation" x="-237.68115942028987" y="459.375"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="brand">
+            <color red="0.32899999618530273" green="0.64899998903274536" blue="0.68900001049041748" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="error">
+            <color red="0.92199999094009399" green="0.34099999070167542" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greyPrimary">
+            <color red="0.1289999932050705" green="0.14100000262260437" blue="0.16099999845027924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
