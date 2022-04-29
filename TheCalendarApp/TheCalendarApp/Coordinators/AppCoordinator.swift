@@ -15,10 +15,17 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
 
     func start() {
-        
+        showCalendarFlow()
     }
 
     deinit {
         DebugPrint.info("AppCoordinator deinit")
+    }
+    
+    func showCalendarFlow() {
+        let coordintator = CalendarCoordinator(self.navigationController)
+        coordintator.start()
+        self.childCoordinators.append(coordintator)
+        
     }
 }
