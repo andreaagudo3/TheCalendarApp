@@ -2,6 +2,8 @@ import UIKit
 
 final class CalendarVC: UIViewController {
 
+    @IBOutlet weak var bookingsTableView: UITableView!
+    
     var presenter: CalendarPresentation!
 
     override func viewDidLoad() {
