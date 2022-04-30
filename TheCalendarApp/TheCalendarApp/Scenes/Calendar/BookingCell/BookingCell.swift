@@ -15,7 +15,11 @@ final class BookingCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        commonInit()
+    }
+    
+    private func commonInit() {
+        spaceImageView.cornerRadius = ViewConstants.cornerRadius
     }
     
     func setViewData(_ data: BookingCellViewData) {
@@ -23,5 +27,9 @@ final class BookingCell: UITableViewCell {
         spaceName.text = data.spaceName
         hourRange.text = data.hourRange
         spaceImageView.isHidden = data.imageUrl == nil
+        
+        if let imageUrl = data.imageUrl {
+            self.loadImage(url: imageUrl, into: spaceImageView)
+        }
     }
 }
