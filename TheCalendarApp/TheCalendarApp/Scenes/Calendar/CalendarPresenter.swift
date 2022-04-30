@@ -17,13 +17,10 @@ class CalendarPresenter {
     
     // MARK: Public
     var calendarViewData: CalendarViewData {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
-        let startDate = formatter.date(from: "2010 01 01")!
-        
+        // TODO: Delete hardcoded startDate
         return CalendarViewData(
             highlightedDates: datesWithBookings,
-            startDate: startDate,
+            startDate: Date(formattedDate: "2010 01 01", format: "yyyy MM dd")!,
             endDate: Calendar.current.date(byAdding: .month, value: 12, to: Date())!,
             numerOfRows: 6,
             firstDayOfWeek: .monday
@@ -40,7 +37,7 @@ class CalendarPresenter {
         }
 
         let bookingsOfSelectedDate = bookings.filter({
-            !$0.startsAt.isSameDay(to: selectedDate)
+            $0.startsAt.isSameDay(to: selectedDate)
         })
         
         return bookingsOfSelectedDate.map({

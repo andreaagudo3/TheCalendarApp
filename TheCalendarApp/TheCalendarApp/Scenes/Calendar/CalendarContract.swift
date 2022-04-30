@@ -15,8 +15,6 @@ protocol CalendarPresentation: AnyObject {
 protocol CalendarViewInterface: AnyObject {
     func refreshBookingsList()
     func refreshCalendar()
-    func updateBookingInfo(booking: String)
-    func showBookingView(_ show: Bool)
 }
 
 // MARK: Navigation

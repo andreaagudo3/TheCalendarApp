@@ -38,13 +38,6 @@ extension CalendarVC: CalendarViewInterface {
     func refreshBookingsList() {
         bookingsTableView.reloadData()
     }
-    
-    func updateBookingInfo(booking: String) {
-       
-    }
-    
-    func showBookingView(_ show: Bool) {
-    }
 }
 
 extension CalendarVC: UITableViewDelegate, UITableViewDataSource {

@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2C23E446-328D-4ECC-8A9F-2AA05E017B91"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TheCalendarApp/Scenes/Calendar/CalendarVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C83CD586-C5DF-44D3-93EA-A776F63F883B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -30,9 +14,89 @@
             filePath = "TheCalendarApp/Scenes/Calendar/CalendarVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E72F135-1757-478D-8C60-0FEDC2D1CCE2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCalendarApp/Scenes/Calendar/CalendarPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "handleDateSelection(date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0FD5C3B5-BA0B-4A8A-85F0-02332E49EB15"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCalendarApp/Scenes/Calendar/CalendarPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "createBookingsCells()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0FD5C3B5-BA0B-4A8A-85F0-02332E49EB15 - 5ae65017fcf46a67"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheCalendarApp.CalendarPresenter.createBookingsCells() -&gt; Swift.Array&lt;TheCalendarApp.BookingsCellType&gt;"
+                  moduleName = "TheCalendarApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreaagudo/TheCalendarApp/TheCalendarApp/TheCalendarApp/Scenes/Calendar/CalendarPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "0FD5C3B5-BA0B-4A8A-85F0-02332E49EB15 - 5ae65017fcf46a67"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheCalendarApp.CalendarPresenter.createBookingsCells() -&gt; Swift.Array&lt;TheCalendarApp.BookingsCellType&gt;"
+                  moduleName = "TheCalendarApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreaagudo/TheCalendarApp/TheCalendarApp/TheCalendarApp/Scenes/Calendar/CalendarPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "284">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4B2A83E-FA59-48B0-B523-06A66487AB27"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCalendarApp/Scenes/Calendar/CalendarPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "createBookingsCells()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
