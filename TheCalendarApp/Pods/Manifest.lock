@@ -1,16 +1,20 @@
 PODS:
   - JTAppleCalendar (8.0.3)
+  - Nuke (10.7.1)
 
 DEPENDENCIES:
   - JTAppleCalendar
+  - Nuke
 
 SPEC REPOS:
   trunk:
     - JTAppleCalendar
+    - Nuke
 
 SPEC CHECKSUMS:
   JTAppleCalendar: 932cadea40b1051beab10f67843451d48ba16c99
+  Nuke: 279f17a599fd1c83cf51de5e0e1f2db143a287b0
 
-PODFILE CHECKSUM: 6911d399a38c3c69c78660cf0d8763d83a95dfe3
+PODFILE CHECKSUM: d7e82396cce642a2069b93b071b8063ae8c599b8
 
 COCOAPODS: 1.11.2

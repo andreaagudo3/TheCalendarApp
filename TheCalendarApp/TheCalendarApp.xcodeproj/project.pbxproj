@@ -189,8 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				1910B178281C553400941BC3 /* Application */,
-				1910B18B281C553400941BC3 /* Coordinators */,
 				1910B18C281C553400941BC3 /* Core */,
+				1910B18B281C553400941BC3 /* Coordinators */,
 				1910B19D281C553C00941BC3 /* Scenes */,
 				1910B1B5281C5B8300941BC3 /* Components */,
 				1910B17C281C553400941BC3 /* Extensions */,
