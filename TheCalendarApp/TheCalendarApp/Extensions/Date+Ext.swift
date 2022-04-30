@@ -70,7 +70,7 @@ extension Date {
     private func convert(from inputTimeZone: TimeZone,
                          to outputTimeZone: TimeZone) -> Date {
         var calendar = Calendar.current
-        calendar.timeZone = outputTimeZone
-        return calendar.dateBySetting(timeZone: inputTimeZone, of: self)!
+        calendar.timeZone = inputTimeZone
+        return calendar.dateBySetting(timeZone: outputTimeZone, of: self)!
     }
 }
