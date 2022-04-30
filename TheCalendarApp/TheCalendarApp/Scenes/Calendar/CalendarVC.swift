@@ -15,6 +15,7 @@ final class CalendarVC: UIViewController {
     }
     
     private func configureView() {
+        title = presenter.title
         calendarView.onDateSelected = { [weak self] calendarDate in
             self?.presenter.handleDateSelection(date: calendarDate)
         }
