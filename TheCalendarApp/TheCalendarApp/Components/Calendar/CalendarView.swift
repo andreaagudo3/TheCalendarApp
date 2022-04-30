@@ -17,9 +17,10 @@ final class CalendarView: UIView {
     private var numerOfRows: Int = 6
     private var selectedDay: CalendarDay?
     
-    var daysWithBookings: [CalendarDay] = [] {
+    var highlightedDays: [CalendarDay] = [] {
         didSet {
             calendarView.reloadData()
+            calendarView.scrollToDate(highlightedDays.first!.date, animateScroll: false)
         }
     }
     
@@ -93,6 +94,10 @@ final class CalendarView: UIView {
 extension CalendarView: JTACMonthViewDelegate, JTACMonthViewDataSource {
 
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
+        let formatter = DateFormatter()
+             formatter.dateFormat = "yyyy MM dd"
+             let startDate =  formatter.date(from: "2010 01 01")!
+        
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
                                                  numberOfRows: numerOfRows,

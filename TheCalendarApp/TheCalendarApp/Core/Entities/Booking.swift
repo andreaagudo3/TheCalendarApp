@@ -16,7 +16,7 @@ struct Booking: Decodable {
     var spaceTimezone: String
     var spaceImage: URL?
     
-    func startEndDescription(format: String, timezone: String) -> String {
+    func hourRange(format: String, timezone: String) -> String {
         return "\(startsAtDescription(format: format, timezone: timezone))-\(endsAtDescription(format: format, timezone: timezone))"
     }
     
