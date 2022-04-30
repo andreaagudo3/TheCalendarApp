@@ -6,7 +6,7 @@ class CalendarPresenter {
     weak var view: CalendarViewInterface!
     var title: String = Locales.bookSpace
     
-    // Private
+    // MARK: Private
     private var bookings: [Booking] = []
     private var selectedDate: Date?
     private var datesWithBookings: [Date] {
@@ -15,7 +15,7 @@ class CalendarPresenter {
         })
     }
     
-    // Public
+    // MARK: Public
     var calendarViewData: CalendarViewData {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
@@ -54,6 +54,7 @@ class CalendarPresenter {
     }
 }
 
+// MARK: CalendarPresentation
 extension CalendarPresenter: CalendarPresentation {
     func getBookings() {
         let fileName = "bookings"
