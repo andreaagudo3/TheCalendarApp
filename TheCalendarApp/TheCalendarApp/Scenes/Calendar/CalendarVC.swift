@@ -31,7 +31,7 @@ final class CalendarVC: UIViewController {
 
 extension CalendarVC: CalendarViewInterface {
     func refreshCalendar() {
-        calendarView.highlightedDays = presenter.calendarDaysWithBookings
+        calendarView.setViewData(presenter.calendarViewData)
     }
     
     func refreshBookingsList() {

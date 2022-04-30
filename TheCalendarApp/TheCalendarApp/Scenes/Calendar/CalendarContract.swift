@@ -3,7 +3,7 @@ import Foundation
 // MARK: Presenter comunication
 protocol CalendarPresentation: AnyObject {
     var title: String { get }
-    var calendarDaysWithBookings: [CalendarDay] { get }
+    var calendarViewData: CalendarViewData { get }
     func cellViewDataType(_ section: Int) -> [BookingsCellType]
     func numberOfObjects(_ section: Int) -> Int
     func getBookings()

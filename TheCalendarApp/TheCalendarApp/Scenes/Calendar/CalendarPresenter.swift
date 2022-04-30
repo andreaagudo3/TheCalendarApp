@@ -9,9 +9,7 @@ class CalendarPresenter {
     // Private
     private var bookings: [Booking] = []
     private var selectedDate: Date?
-    
-    // Public
-    var calendarDaysWithBookings: [CalendarDay] {
+    private var calendarDaysWithBookings: [CalendarDay] {
         let calendarDays = bookings.map({
             CalendarDay(date: $0.startsAt,
                         isAvailable: true,
@@ -19,6 +17,21 @@ class CalendarPresenter {
         })
         
         return calendarDays
+    }
+    
+    // Public
+    var calendarViewData: CalendarViewData {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        let startDate = formatter.date(from: "2010 01 01")!
+        
+        return CalendarViewData(
+            highlightedDays: self.calendarDaysWithBookings,
+            startDate: startDate,
+            endDate: Calendar.current.date(byAdding: .month, value: 12, to: Date())!,
+            numerOfRows: 6,
+            firstDayOfWeek: .monday
+        )
     }
     
     init(view: CalendarViewInterface) {

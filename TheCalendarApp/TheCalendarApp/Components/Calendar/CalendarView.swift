@@ -9,20 +9,11 @@ final class CalendarView: UIView {
     @IBOutlet weak var contentView: UIStackView!
 
     var onDateSelected: ((Date) -> Void)?
-    
-    private var firstDayOfWeek: DaysOfWeek = DaysOfWeek.monday
-    private var endDate: Date = Calendar.current.date(byAdding: .month, value: 12, to: Date())!
-    private var startDate: Date = Date()
     private var testCalendar = Calendar(identifier: .gregorian)
-    private var numerOfRows: Int = 6
-    private var selectedDay: CalendarDay?
+    private var parameters = ConfigurationParameters(startDate: Date(), endDate: Date())
     
-    var highlightedDays: [CalendarDay] = [] {
-        didSet {
-            calendarView.reloadData()
-            calendarView.scrollToDate(highlightedDays.first!.date, animateScroll: false)
-        }
-    }
+    // TODO: Handle preselected day
+    private var selectedDay: CalendarDay?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,6 +27,31 @@ final class CalendarView: UIView {
         setup()
     }
     
+    func setViewData(_ viewData: CalendarViewData) {
+        configureWeekDaysStack(firstDayOfWeek: viewData.firstDayOfWeek)
+        parameters = ConfigurationParameters(startDate: viewData.startDate,
+                                             endDate: viewData.endDate,
+                                             numberOfRows: viewData.numerOfRows,
+                                             calendar: testCalendar,
+                                             generateInDates: .forAllMonths,
+                                             generateOutDates: .tillEndOfGrid,
+                                             firstDayOfWeek: viewData.firstDayOfWeek)
+        
+        calendarView.reloadData()
+        
+        if let firstDate = viewData.highlightedDays.first?.date {
+            calendarView.scrollToDate(firstDate, animateScroll: false)
+        }
+    }
+    
+    func selectDate(_ date: Date) {
+        calendarView.selectDates([date], triggerSelectionDelegate: true)
+        calendarView.scrollToDate(date, animateScroll: false)
+    }
+}
+
+// MARK: Private
+extension CalendarView {
     private func setup() {
         // Calendar
         setCalendar()
@@ -43,15 +59,8 @@ final class CalendarView: UIView {
             self.setupViewsOfCalendar(from: visibleDates)
         }
         
-        configureWeekDaysStack()
-        
         contentView.cornerRadius = ViewConstants.cornerRadius
         contentView.layer.masksToBounds = true
-    }
-    
-    func selectDate(_ date: Date) {
-        calendarView.selectDates([date], triggerSelectionDelegate: true)
-        calendarView.scrollToDate(date, animateScroll: false)
     }
 
     private func setupViewsOfCalendar(from visibleDates: DateSegmentInfo) {
@@ -67,13 +76,14 @@ final class CalendarView: UIView {
         
         calendarView.calendarDataSource = self
         calendarView.calendarDelegate = self
+        
         let nibName = UINib(nibName: CalendarCell.reuseID, bundle: nil)
         calendarView.register(nibName, forCellWithReuseIdentifier: CalendarCell.reuseID)
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
     }
     
-    private func configureWeekDaysStack() {
+    private func configureWeekDaysStack(firstDayOfWeek: DaysOfWeek) {
         var weekDays = testCalendar.veryShortWeekdaySymbols
         weekDays = Array(weekDays[firstDayOfWeek.rawValue-1..<weekDays.count]) + weekDays[0..<firstDayOfWeek.rawValue-1]
         
@@ -92,20 +102,7 @@ final class CalendarView: UIView {
 
 // MARK: JTAppleCalendarDelegate
 extension CalendarView: JTACMonthViewDelegate, JTACMonthViewDataSource {
-
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
-        let formatter = DateFormatter()
-             formatter.dateFormat = "yyyy MM dd"
-             let startDate =  formatter.date(from: "2010 01 01")!
-        
-        let parameters = ConfigurationParameters(startDate: startDate,
-                                                 endDate: endDate,
-                                                 numberOfRows: numerOfRows,
-                                                 calendar: testCalendar,
-                                                 generateInDates: .forAllMonths,
-                                                 generateOutDates: .tillEndOfGrid,
-                                                 firstDayOfWeek: firstDayOfWeek)
-
         return parameters
     }
     

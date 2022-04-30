@@ -14,8 +14,8 @@
             filePath = "TheCalendarApp/Scenes/Calendar/CalendarPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "handleDateSelection(date:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "TheCalendarApp/Scenes/Calendar/CalendarPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "numberOfObjects(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "TheCalendarApp/Scenes/Calendar/CalendarPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "numberOfObjects(_:)"
             landmarkType = "7">
          </BreakpointContent>
