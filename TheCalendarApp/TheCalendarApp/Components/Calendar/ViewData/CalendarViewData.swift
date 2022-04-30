@@ -2,7 +2,7 @@ import Foundation
 import JTAppleCalendar
 
 struct CalendarViewData {
-    var highlightedDays: [CalendarDay]
+    var highlightedDates: [Date]
     var startDate: Date
     var endDate: Date
     var numerOfRows: Int

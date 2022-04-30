@@ -64,7 +64,7 @@ class CalendarCell: JTACDayCell {
             self.dayLabel.font = self.selectable ? selectableFont : unselectableFont
         }
         
-        dotView.isHidden = !day.hasBookings || cellState.dateBelongsTo != .thisMonth
+        dotView.isHidden = !day.isHighlighted || cellState.dateBelongsTo != .thisMonth
         configueViewIntoBubbleView(cellState, date: date)
     }
     

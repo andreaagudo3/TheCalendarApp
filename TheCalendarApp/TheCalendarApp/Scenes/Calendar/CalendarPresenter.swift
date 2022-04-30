@@ -9,14 +9,10 @@ class CalendarPresenter {
     // Private
     private var bookings: [Booking] = []
     private var selectedDate: Date?
-    private var calendarDaysWithBookings: [CalendarDay] {
-        let calendarDays = bookings.map({
-            CalendarDay(date: $0.startsAt,
-                        isAvailable: true,
-                        hasBookings: true)
+    private var datesWithBookings: [Date] {
+        return bookings.map({
+            $0.startsAt
         })
-        
-        return calendarDays
     }
     
     // Public
@@ -26,7 +22,7 @@ class CalendarPresenter {
         let startDate = formatter.date(from: "2010 01 01")!
         
         return CalendarViewData(
-            highlightedDays: self.calendarDaysWithBookings,
+            highlightedDates: datesWithBookings,
             startDate: startDate,
             endDate: Calendar.current.date(byAdding: .month, value: 12, to: Date())!,
             numerOfRows: 6,

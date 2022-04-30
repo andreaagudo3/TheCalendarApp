@@ -11,6 +11,7 @@ final class CalendarView: UIView {
     var onDateSelected: ((Date) -> Void)?
     private var testCalendar = Calendar(identifier: .gregorian)
     private var parameters = ConfigurationParameters(startDate: Date(), endDate: Date())
+    private var highlightedDates: [Date] = []
     
     // TODO: Handle preselected day
     private var selectedDay: CalendarDay?
@@ -28,6 +29,7 @@ final class CalendarView: UIView {
     }
     
     func setViewData(_ viewData: CalendarViewData) {
+        highlightedDates = viewData.highlightedDates
         configureWeekDaysStack(firstDayOfWeek: viewData.firstDayOfWeek)
         parameters = ConfigurationParameters(startDate: viewData.startDate,
                                              endDate: viewData.endDate,
@@ -39,7 +41,7 @@ final class CalendarView: UIView {
         
         calendarView.reloadData()
         
-        if let firstDate = viewData.highlightedDays.first?.date {
+        if let firstDate = viewData.highlightedDates.first {
             calendarView.scrollToDate(firstDate, animateScroll: false)
         }
     }
@@ -98,6 +100,10 @@ extension CalendarView {
         label.text = symbol
         return label
     }
+    
+    private func isHightlighted(_ date: Date) -> Bool {
+        return highlightedDates.contains(where: { $0.isSameDay(to: date) })
+    }
 }
 
 // MARK: JTAppleCalendarDelegate
@@ -109,7 +115,7 @@ extension CalendarView: JTACMonthViewDelegate, JTACMonthViewDataSource {
     func calendar(_ calendar: JTACMonthView, willDisplay cell: JTACDayCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         let calendarDay = CalendarDay(date: date,
                                       isAvailable: true,
-                                      hasBookings: true)
+                                      isHighlighted: isHightlighted(date))
         (cell as? CalendarCell)?.handleCellSelection(cellState: cellState,
                                                      day: calendarDay)
     }
@@ -121,7 +127,7 @@ extension CalendarView: JTACMonthViewDelegate, JTACMonthViewDataSource {
     
         let calendarDay = CalendarDay(date: date,
                                       isAvailable: true,
-                                      hasBookings: true)
+                                      isHighlighted: isHightlighted(date))
         myCustomCell.handleCellSelection(cellState: cellState, day: calendarDay)
         return myCustomCell
     }
