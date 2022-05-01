@@ -11,7 +11,7 @@
 		1910B160281C552800941BC3 /* TheCalendarAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B15F281C552800941BC3 /* TheCalendarAppTests.swift */; };
 		1910B16A281C552800941BC3 /* TheCalendarAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B169281C552800941BC3 /* TheCalendarAppUITests.swift */; };
 		1910B16C281C552800941BC3 /* TheCalendarAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B16B281C552800941BC3 /* TheCalendarAppUITestsLaunchTests.swift */; };
-		1910B190281C553400941BC3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B179281C553400941BC3 /* AppConstants.swift */; };
+		1910B190281C553400941BC3 /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B179281C553400941BC3 /* ViewConstants.swift */; };
 		1910B191281C553400941BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B17A281C553400941BC3 /* AppDelegate.swift */; };
 		1910B192281C553400941BC3 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B17B281C553400941BC3 /* Application.swift */; };
 		1910B194281C553400941BC3 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910B17F281C553400941BC3 /* Reusable.swift */; };
@@ -90,7 +90,7 @@
 		1910B165281C552800941BC3 /* TheCalendarAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheCalendarAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1910B169281C552800941BC3 /* TheCalendarAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCalendarAppUITests.swift; sourceTree = "<group>"; };
 		1910B16B281C552800941BC3 /* TheCalendarAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCalendarAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		1910B179281C553400941BC3 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		1910B179281C553400941BC3 /* ViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
 		1910B17A281C553400941BC3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1910B17B281C553400941BC3 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		1910B17F281C553400941BC3 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -433,7 +433,7 @@
 		1910B1E6281C653300941BC3 /* AppConstants */ = {
 			isa = PBXGroup;
 			children = (
-				1910B179281C553400941BC3 /* AppConstants.swift */,
+				1910B179281C553400941BC3 /* ViewConstants.swift */,
 				1910B1ED281C914700941BC3 /* DateFormats.swift */,
 				1910B22B281EA57F00941BC3 /* User.swift */,
 			);
@@ -732,7 +732,7 @@
 				1910B1C7281C5B8300941BC3 /* AnimationClass.swift in Sources */,
 				1910B1AF281C570E00941BC3 /* CalendarCoordinator.swift in Sources */,
 				1910B1EA281C907100941BC3 /* Decoding+Extension.swift in Sources */,
-				1910B190281C553400941BC3 /* AppConstants.swift in Sources */,
+				1910B190281C553400941BC3 /* ViewConstants.swift in Sources */,
 				1910B1EE281C914700941BC3 /* DateFormats.swift in Sources */,
 				1910B1AD281C566F00941BC3 /* CalendarContract.swift in Sources */,
 				1910B1FA281D964700941BC3 /* ImageManager.swift in Sources */,
