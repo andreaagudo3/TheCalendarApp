@@ -41,12 +41,15 @@ extension CalendarVC: CalendarViewInterface {
 }
 
 extension CalendarVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter.numberOfSections()
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfObjects(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let viewData = presenter.cellViewDataType(indexPath.section)[indexPath.row]
+        let viewData = presenter.cellsViewDataType(indexPath.section)[indexPath.row]
         switch viewData {
         case .booking(let viewData):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: BookingCell.reuseID,
@@ -55,8 +58,18 @@ extension CalendarVC: UITableViewDelegate, UITableViewDataSource {
             }
             cell.setViewData(viewData)
             return cell
+        case .emptySection(let description):
+            let cell = UITableViewCell()
+            cell.textLabel?.text = description
+            cell.textLabel?.textAlignment = .center
+            return cell
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = SectionHeaderView()
+        headerView.title = presenter.sectionHeaderViewData(section).title
+
+        return headerView
+    }
 }

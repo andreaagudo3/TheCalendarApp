@@ -9,7 +9,7 @@ final class CalendarView: UIView {
     @IBOutlet weak var contentView: UIStackView!
 
     var onDateSelected: ((Date) -> Void)?
-    private var testCalendar = Calendar(identifier: .gregorian)
+    private var testCalendar: Calendar = .current
     private var parameters = ConfigurationParameters(startDate: Date(), endDate: Date())
     private var highlightedDates: [Date] = []
     

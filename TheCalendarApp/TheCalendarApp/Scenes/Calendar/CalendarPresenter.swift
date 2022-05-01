@@ -21,9 +21,7 @@ class CalendarPresenter {
         return CalendarViewData(
             highlightedDates: datesWithBookings,
             startDate: Date(formattedDate: "2010 01 01", format: "yyyy MM dd")!,
-            endDate: Calendar.current.date(byAdding: .month, value: 12, to: Date())!,
-            numerOfRows: 6,
-            firstDayOfWeek: .monday
+            endDate: Calendar.current.date(byAdding: .month, value: 12, to: Date())!
         )
     }
     
@@ -31,7 +29,7 @@ class CalendarPresenter {
         self.view = view
     }
     
-    private func createBookingsCells() -> [BookingsCellType] {
+    private func createBookingsCells() -> [BookingsListCellType] {
         guard let selectedDate = selectedDate else {
             return []
         }
@@ -40,14 +38,17 @@ class CalendarPresenter {
             $0.startsAt.isSameDay(to: selectedDate)
         })
         
-        return bookingsOfSelectedDate.map({
-            BookingsCellType.booking(.init(
-                title: Locales.bookingsFor(arg0: $0.startsAt.withFormat(DateFormats.dayMonth)),
-                spaceName: $0.spaceName,
-                hourRange: $0.hourRange(format: DateFormats.hourFormat, timezone: "UCT"),
-                imageUrl: $0.spaceImage
-            ))
-        })
+        if bookingsOfSelectedDate.isEmpty {
+            return [.emptySection(Locales.noSpacesAvailable)]
+        } else {
+            return bookingsOfSelectedDate.map({
+                BookingsListCellType.booking(.init(
+                    spaceName: $0.spaceName,
+                    hourRange: $0.hourRange(format: DateFormats.hourFormat, timezone: User.timezone),
+                    imageUrl: $0.spaceImage
+                ))
+            })
+        }
     }
 }
 
@@ -75,21 +76,32 @@ extension CalendarPresenter: CalendarPresentation {
     }
     
     // MARK: Bookings List
-    func numberOfObjects(_ section: Int) -> Int {
-        guard let selectedDate = selectedDate else { return 0 }
-        
-        let bookingsOfSelectedDate = bookings.filter({
-            $0.startsAt.isSameDay(to: selectedDate)
-        })
-        return bookingsOfSelectedDate.count
+    func numberOfSections() -> Int {
+        selectedDate == nil ? 0 : BookingsListSection.allCases.count
     }
     
-    func cellViewDataType(_ section: Int) -> [BookingsCellType] {
-        // TODO: Take in consideration section in case we want to add differents in the future
-        var cellViewData: [BookingsCellType] = []
-        cellViewData.append(contentsOf: createBookingsCells())
-        
-        return cellViewData
+    func numberOfObjects(_ section: Int) -> Int {
+        return self.cellsViewDataType(section).count
+    }
+    
+    func sectionHeaderViewData(_ section: Int) -> BookingsListSectionHeader {
+        switch BookingsListSection(rawValue: section) {
+        case .bookings:
+            return .init(title: Locales.spacesFor(arg0: selectedDate?.withFormat(DateFormats.dayMonth) ?? ""))
+        case .none:
+            return .init(title: "")
+        }
+    }
+    
+    func cellsViewDataType(_ section: Int) -> [BookingsListCellType] {
+        var cellsViewDataType: [BookingsListCellType] = []
+        switch BookingsListSection(rawValue: section) {
+        case .bookings:
+            cellsViewDataType.append(contentsOf: createBookingsCells())
+        case .none:
+            break
+        }
+        return cellsViewDataType
     }
     
 }

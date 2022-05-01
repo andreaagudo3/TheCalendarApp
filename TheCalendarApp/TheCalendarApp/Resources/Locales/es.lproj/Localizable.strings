@@ -1,3 +1,4 @@
 "app_locale" = "es_ES";
-"bookings_for" = "Reservas para %1$@";
+"spaces_for" = "Espacios para %1$@";
 "book_space" = "Reserva un espacio en Bristol, Reino Unido";
+"no_spaces_available" = "😢 No hay espacios disponibles";

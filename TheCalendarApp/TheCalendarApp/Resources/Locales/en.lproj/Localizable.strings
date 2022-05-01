@@ -1,3 +1,4 @@
 "app_locale" = "en_US";
-"bookings_for" = "Bookings for %1$@";
+"spaces_for" = "Spaces for %1$@";
 "book_space" = "Book a space in Bristol, United Kingdom";
+"no_spaces_available" = "😢 There are no spaces available";

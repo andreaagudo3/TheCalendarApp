@@ -4,12 +4,15 @@ import Foundation
 protocol CalendarPresentation: AnyObject {
     var title: String { get }
     var calendarViewData: CalendarViewData { get }
-    func cellViewDataType(_ section: Int) -> [BookingsCellType]
-    func numberOfObjects(_ section: Int) -> Int
     func getBookings()
     func handleDateSelection(date: Date)
+    
+    // TODO: Create generic protocol
+    func cellsViewDataType(_ section: Int) -> [BookingsListCellType]
+    func sectionHeaderViewData(_ section: Int) -> BookingsListSectionHeader
+    func numberOfObjects(_ section: Int) -> Int
+    func numberOfSections() -> Int
 }
-
 
 // MARK: Interface performance
 protocol CalendarViewInterface: AnyObject {
@@ -21,7 +24,17 @@ protocol CalendarViewInterface: AnyObject {
 protocol CalendarSceneDelegate: AnyObject  {
 }
 
-enum BookingsCellType {
+// MARK: Bookings List
+struct BookingsListSectionHeader {
+    let title: String
+}
+
+enum BookingsListSection: Int, CaseIterable {
+    case bookings
+}
+
+enum BookingsListCellType {
     case booking(BookingCellViewData)
+    case emptySection(String)
 }
 
