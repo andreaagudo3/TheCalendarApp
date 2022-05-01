@@ -12,9 +12,8 @@ Remember to place youself inside the TheCalendarApp folder via terminal first.
 
 ### High Level Layers
 
-#### MVP Concepts
+#### MVP-C Concepts
 
-##### Presentation Logic
 * `View` - delegates user interaction events to the `Presenter` and displays data passed by the `Presenter`
     * All `UIViewController`, `UIView`, `UITableViewCell` subclasses belong to the `View` layer
     * It shouldn't contain any complex logic.
