@@ -381,8 +381,8 @@
 		1910B1CB281C5BBF00941BC3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				1910B1B8281C5B8300941BC3 /* CalendarCell.xib */,
 				1910B1BA281C5B8300941BC3 /* CalendarCell.swift */,
+				1910B1B8281C5B8300941BC3 /* CalendarCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";

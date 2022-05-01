@@ -91,7 +91,7 @@ class CalendarCell: JTACDayCell {
             self.dayLabel.font = selectedFont
             self.selectedView.backgroundColor = selectedRoundColor
         } else {
-            if date.isToday {
+            if date.isToday && cellState.dateBelongsTo == .thisMonth {
                 self.dayLabel.textColor = todayTextColor
                 self.selectedView.isHidden = false
                 self.selectedView.backgroundColor = todayRoundColor

@@ -68,7 +68,8 @@ extension CalendarPresenter: CalendarPresentation {
             self.view.refreshCalendar()
         } catch {
             fatalError("Json \(fileName) does not exist or is corrupted")
-        }    }
+        }
+    }
     
     func handleDateSelection(date: Date) {
         selectedDate = date
