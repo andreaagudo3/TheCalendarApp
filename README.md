@@ -30,7 +30,6 @@ Remember to place youself inside the TheCalendarApp folder via terminal first.
 
 ### TheCalendarApp Details
 
-* The demo applications tries to expose a fairly complex set of features that justifies the usage of the concepts presented above
 * __Unit Tests__ are missing at the moment.
 * __Code comments__ can be found in several classes highlighting different design decisions or referencing followup resources
 * The project structure tries to follow clean code concept that can be found in the references section
