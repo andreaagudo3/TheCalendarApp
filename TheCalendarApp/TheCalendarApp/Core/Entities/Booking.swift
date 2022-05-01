@@ -35,31 +35,4 @@ struct Booking: Decodable {
         case spaceTimezone = "space_timezone"
         case spaceImage = "space_image"
     }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        spaceTimezone = try container.decode(String.self, forKey: .spaceTimezone)
-        spaceName = try container.decodeIfPresent(String.self, forKey: .spaceName) ?? "-"
-        spaceImage = try container.decodeIfPresent(URL.self, forKey: .spaceImage)
-        
-        if let startsAtStr = try container.decodeIfPresent(String.self, forKey: .startsAt) {
-            if let date = Date(formattedDate: startsAtStr) {
-                startsAt = date
-            } else {
-                fatalError("Booking startAt format is not valid")
-            }
-        } else {
-            fatalError("Booking is missing startAt")
-        }
-        
-        if let endsAtStr = try container.decodeIfPresent(String.self, forKey: .endsAt) {
-            if let date = Date(formattedDate: endsAtStr) {
-                endsAt = date
-            } else {
-                fatalError("Booking endsAt format is not valid")
-            }
-        } else {
-            fatalError("Booking is missing endsAt")
-        }
-    }
 }

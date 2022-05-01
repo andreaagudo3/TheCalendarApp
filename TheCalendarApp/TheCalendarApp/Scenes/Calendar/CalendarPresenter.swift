@@ -61,7 +61,8 @@ extension CalendarPresenter: CalendarPresentation {
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
             let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
+            decoder.dateDecodingStrategy = .formatted(Date.sharedDateFormatter)
+            
             let articlesFromFile = try decoder.decode(BookingsResponse.self, from: data)
             
             DebugPrint.ok("Bookings data: \(data.prettyJSON)")
