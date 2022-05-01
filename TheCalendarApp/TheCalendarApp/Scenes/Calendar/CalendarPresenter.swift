@@ -17,7 +17,7 @@ class CalendarPresenter {
     
     // MARK: Public
     var calendarViewData: CalendarViewData {
-        // TODO: Delete hardcoded startDate
+        // TODO: Delete hardcoded startDate & endDate
         return CalendarViewData(
             highlightedDates: datesWithBookings,
             startDate: Date(formattedDate: "2010 01 01", format: "yyyy MM dd")!,
@@ -63,6 +63,8 @@ extension CalendarPresenter: CalendarPresentation {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             let articlesFromFile = try decoder.decode(BookingsResponse.self, from: data)
+            
+            DebugPrint.ok("Bookings data: \(data.prettyJSON)")
             
             self.bookings = articlesFromFile.bookings
             self.view.refreshCalendar()
